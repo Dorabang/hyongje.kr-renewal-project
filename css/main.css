@@ -1,0 +1,93 @@
+@charset "utf-8";
+
+body { font-family: 'Noto Sans KR', sans-serif; font-size: 1.6rem; color: #000; line-height: 1.5; }
+body::-webkit-scrollbar { width: 15px; }
+body::-webkit-scrollbar-thumb { background: #999; }
+body::-webkit-scrollbar-track { background: #eee; }
+
+#wrap { overflow-x: hidden; position: relative; }
+
+.clearfix::after { content: ''; display: block; clear: both; }
+
+.inner { width: 89.583%; margin: 0 auto; }
+
+@media (max-width:1024px) {
+    .inner { width: calc(100% - 100px); margin: 0 auto; }
+    #wrap::before { left: 2.441%; }
+    #wrap::after { right: 2.441%; }
+}
+
+@media (max-width:768px) {
+    .inner { width: calc(100% - 40px); margin: 0 auto; }
+    #wrap::before { left: 1.302%; }
+    #wrap::after { right: 1.302%; }
+}
+
+
+/* popup */
+.popup { position: fixed; left: 0; top: 0; background: #000; position: relative; width: 100%; height: 40px; text-align: center; }
+.popup a { display: inline-block; padding-top: 7px; color: #fff; }
+.popup .popup_close { cursor: pointer; color: #fff; position: absolute; right: 15px; top: 6px; }
+
+
+/* header */
+#header { border-bottom: 1px solid #ddd; }
+#header.fix { position: fixed; left: 0; top: 0; width: 100%; background: rgba(255,255,255,0.9); border-bottom: 1px solid #eee; z-index: 99999; transition: background 0.5s; }
+#header .inner { position: relative; height: 100px; display: flex; justify-content: space-between; align-items: center; }
+
+#header h1 { width: 9.302%; min-width: 120px; line-height: 0; }
+#header h1 img { width: 100%; height: 100%; object-fit: cover; }
+
+#header .gnb > li { float: left; position: relative; }
+#header .gnb > li > a { display: block; font-size: 1.8rem; color: #666; font-family: 'Noto Serif KR'; padding: 10px 20px; transition: color 0.3s; }
+#header .gnb > li:hover > a { color: #000; }
+#header .gnb .depth2 { position: absolute; left: 0; top: 74px; z-index: 999; width: 150px; padding: 10px 20px; background: #fff; border: 1px solid #ddd; border-top: 0; }
+#header .gnb .depth2 li { padding: 5px 0; }
+#header .gnb .depth2 li a { color: #666; display: block; transition: color 0.3s; position: relative; }
+#header .gnb .depth2 li a::after { content: ''; display: block; width: 20px; height: 20px; background: url(../images/common/arrow-right.svg) no-repeat center center; background-size: 80%; position: absolute; right: 0; top: 2px; opacity: 0; transition: opacity 0.3s; }
+#header .gnb .depth2 li a:hover::after { opacity: 1; }
+#header .gnb .depth2 li a:hover { color: #000; }
+
+#header .util li { float: left; margin: 0 10px; }
+#header .util li a { color: #999; transition: color 0.3s; }
+#header .util li a:hover { color: #000; }
+
+
+/* container */
+#container section { padding: 100px 0; }
+#container section .inner { height: 500px; }
+
+/* main_visual */
+#container #main_visual { border-bottom: 1px solid #ddd; padding: 0; }
+#main_visual img { width: 100%; height: 100%; object-fit: cover; }
+#main_visual .inner img:not(:nth-child(1)) { display: none; }
+
+@media (max-width:1024px) {
+    #main_visual .inner img:not(:nth-child(2)) { display: none; }
+    #main_visual .inner img:nth-child(2) { display: block; }
+}
+
+@media (max-width:768px) {
+    #main_visual .inner img:not(:nth-child(3)) { display: none; }
+    #main_visual .inner img:nth-child(3) { display: block; }
+}
+
+/* footer */
+#footer { padding: 80px 0; background: #333; text-align: center; }
+#footer .footer_logo { width: 14.534%; min-width: 180px; margin: 0 auto; padding-bottom: 30px; transform: translateX(-15px); }
+#footer .footer_logo img { width: 100%; object-fit: cover; }
+#footer address { color: #999; }
+#footer address br { display: none; }
+#footer .copy { color: #999; padding-top: 5px;}
+
+@media (max-width:1100px) {
+    #footer address br:nth-child(1) { display: block; }
+}
+
+@media (max-width:768px) {
+    #footer address br { display: block; }
+}
+
+/* gotop */
+.gotop { position: fixed; right: 2.604%; bottom: 4.629%; width: 50px; height: 50px; background: #fff; border: 1px solid #333; text-align: center; padding: 12px 0; font-weight: 700; z-index: 9999999; cursor: pointer; }
+.gotop i { color: #333; }
