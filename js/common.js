@@ -62,4 +62,31 @@ $(document).ready(function () {
             left: "100%",
         });
     });
+
+    // new_prod1
+    const prod_list = new Swiper('.prod_list', {
+      speed : 1500,
+      loop : true,
+      slidesPerView : '1',
+      centeredSlides: true,
+      spaceBetween : 20,
+
+      autoplay : {
+        delay : 3000,
+        disableOnInteraction : false,
+      },
+
+      breakpoints: {
+        640: {  // 가로해상도가 640px 이상일 경우
+          slidesPerView: 2,
+          spaceBetween: 20,
+        },
+        768: {  // 가로해상도가 768px 이상일 경우
+          slidesPerView: 3,
+          spaceBetween: 20,
+        },
+      },
+
+   });
+
 });
